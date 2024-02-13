@@ -1,5 +1,4 @@
-# Text Anonymization and Processing with Presidio and OpenAI GPT
-
+# Text Anonymization and Processing with Presidio for LLM processing
 ## Description
 
 This project includes a Python script that integrates Microsoft Presidio for text anonymization and OpenAI's GPT for advanced text processing. It ensures sensitive information is anonymized before processing and then accurately deanonymized in the output.

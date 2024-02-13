@@ -1,0 +1,17 @@
+[Unit]
+Description=Presidio Analyzer Container
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+#Restart=always
+TimeoutStartSec=600
+ExecStartPre=-/usr/bin/podman rm -f presidio-analyzer
+ExecStartPre=/usr/bin/podman pull mcr.microsoft.com/presidio-analyzer:latest
+ExecStart=/usr/bin/podman run --name presidio-analyzer -p 5001:3000 mcr.microsoft.com/presidio-analyzer:latest
+ExecStop=/usr/bin/podman stop -t 10 presidio-analyzer
+ExecStopPost=/usr/bin/podman rm presidio-analyzer
+SyslogIdentifier=presidio-analyzer
+
+[Install]
+WantedBy=multi-user.target

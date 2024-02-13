@@ -4,18 +4,19 @@
 
 This project includes a Python script that integrates Microsoft Presidio for text anonymization and OpenAI's GPT for advanced text processing. It ensures sensitive information is anonymized before processing and then accurately deanonymized in the output.
 
-## Installation
+## Installation / Tested on Opensuse TW + Python 3.11.5
 
 1. Clone this repository to your local machine.
-2. Tested on Python 3.11.5 
-3. Install the required dependencies:
-4. Set your OpenAI API key as an environment variable:
+2. Deploy presidio using the systemd podman services 
+3. Install the required python dependencies
+4. Set your OpenAI API key as an environment variable
 
 
 ## Usage
 
 Run the script from the command line, specifying the path to the text file you want to process, the language of the text (currently only 'en' is supported), and your OpenAI API key:
 
+**python presidio-anon-deanon.py /home/tofix/test.txt --language en --openai_api_key $OPENAI_API_KEY**
 
 ## Example
 

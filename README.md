@@ -7,7 +7,7 @@ This project includes a Python script that integrates Microsoft Presidio for tex
 ## Installation
 
 1. Clone this repository to your local machine.
-2. Ensure Python 3.6+ is installed.
+2. Tested on Python 3.11.5 
 3. Install the required dependencies:
 4. Set your OpenAI API key as an environment variable:
 

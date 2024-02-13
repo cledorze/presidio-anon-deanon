@@ -1,0 +1,15 @@
+[Unit]
+Description=Presidio Anonymization Service
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Restart=always
+ExecStartPre=-/usr/bin/podman rm -f presidio-anonymization
+ExecStartPre=/usr/bin/podman pull your-anonymization-image:latest
+ExecStart=/usr/bin/podman run --name presidio-anonymization -p YOUR_PORT:INSIDE_PORT your-anonymization-image:latest
+ExecStop=/usr/bin/podman stop presidio-anonymization
+SyslogIdentifier=presidio-anonymization
+
+[Install]
+WantedBy=multi-user.target
